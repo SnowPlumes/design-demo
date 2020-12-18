@@ -32,6 +32,7 @@ public class QuestionBank implements Cloneable {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     protected Object clone() throws CloneNotSupportedException {
         QuestionBank questionBank = (QuestionBank) super.clone();
         questionBank.answerQuestions = (ArrayList<AnswerQuestion>) answerQuestions.clone();
@@ -40,7 +41,7 @@ public class QuestionBank implements Cloneable {
         Collections.shuffle(questionBank.answerQuestions);
         Collections.shuffle(questionBank.choiceQuestions);
 
-        choiceQuestions.forEach(question -> {
+        questionBank.choiceQuestions.forEach(question -> {
             Topic random = TopicRandomUtil.random(question.getOption(), question.getKey());
             question.setOption(random.getOption());
             question.setKey(random.getKey());
@@ -59,7 +60,7 @@ public class QuestionBank implements Cloneable {
             detail.append("第").append(idx + 1).append("题：").append(choiceQuestions.get(idx).getName()).append("\r\n");
             Map<String, String> option = choiceQuestions.get(idx).getOption();
             for (String key : option.keySet()) {
-                detail.append(key).append("：").append(option.get(key)).append("\r\n");;
+                detail.append(key).append("：").append(option.get(key)).append("\r\n");
             }
             detail.append("答案：").append(choiceQuestions.get(idx).getKey()).append("\r\n\n");
         }

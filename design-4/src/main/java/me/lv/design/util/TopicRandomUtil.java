@@ -26,7 +26,7 @@ public class TopicRandomUtil {
         String newKey = "";
         for (String next : keySet) {
             String randomKey = keyList.get(index++);
-            if (Objects.equals(randomKey, next)) {
+            if (Objects.equals(key, next)) {
                 newKey = randomKey;
             }
             newOption.put(randomKey, option.get(next));
