@@ -1,7 +1,7 @@
 package me.lv.design.mode;
 
 /**
- * @author 1
+ * @author lv
  * @date 2020/12/22 14:46
  */
 public interface IPayMode {
