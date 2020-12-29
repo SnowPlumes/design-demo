@@ -14,9 +14,9 @@ public class CommodityTest {
         String uid = UUID.randomUUID().toString();
 
         ICommodity cardService = storeFactory.getCommodityService(StoreFactory.Commodity.CARD);
-        cardService.sendCommodity(uid, UUID.randomUUID().toString(), "", null);
+        cardService.sendCommodity(uid, UUID.randomUUID().toString());
 
         ICommodity goodsService = storeFactory.getCommodityService(StoreFactory.Commodity.GOODS);
-        goodsService.sendCommodity(uid, UUID.randomUUID().toString(), "", null);
+        goodsService.sendCommodity(uid, UUID.randomUUID().toString());
     }
 }

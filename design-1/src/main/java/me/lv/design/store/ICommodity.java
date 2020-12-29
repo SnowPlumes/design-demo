@@ -12,9 +12,7 @@ public interface ICommodity {
      *
      * @param uId
      * @param commodityId
-     * @param bizId
-     * @param extMap
      * @throws Exception
      */
-    void sendCommodity(String uId, String commodityId, String bizId, Map<String, String> extMap) throws Exception;
+    void sendCommodity(String uId, String commodityId) throws Exception;
 }

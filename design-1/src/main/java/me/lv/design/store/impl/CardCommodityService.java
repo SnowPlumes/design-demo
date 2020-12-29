@@ -13,7 +13,7 @@ public class CardCommodityService implements ICommodity {
     private final CardService cardService = new CardService();
 
     @Override
-    public void sendCommodity(String uId, String commodityId, String bizId, Map<String, String> extMap) throws Exception {
+    public void sendCommodity(String uId, String commodityId) throws Exception {
         cardService.grantCard(getBindMobile(uId), commodityId);
     }
 
