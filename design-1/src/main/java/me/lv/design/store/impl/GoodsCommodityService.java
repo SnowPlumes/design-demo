@@ -13,7 +13,7 @@ public class GoodsCommodityService implements ICommodity {
     private final GoodsService goodsService = new GoodsService();
 
     @Override
-    public void sendCommodity(String uId, String commodityId) throws Exception {
+    public void sendCommodity(String uId, String commodityId) {
         goodsService.deliverGoods(uId, commodityId);
     }
 }
