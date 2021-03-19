@@ -1,29 +1,31 @@
 package me.lv.design;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * @author plume
  */
+@Slf4j
 public class Student {
-    // 持有缓存:
-    private static final Map<String, Student> cache = new HashMap<>();
 
-    // 静态工厂方法:
+    private static final Map<String, Student> CACHE = new HashMap<>();
+
     public static Student create(int id, String name) {
         String key = id + "\n" + name;
         // 先查找缓存:
-        Student std = cache.get(key);
+        Student std = CACHE.get(key);
         if (std == null) {
             // 未找到,创建新对象:
-            System.out.println(String.format("create new Student(%s, %s)", id, name));
+            log.info("create new Student({}, {})", id, name);
             std = new Student(id, name);
             // 放入缓存:
-            cache.put(key, std);
+            CACHE.put(key, std);
         } else {
             // 缓存中存在:
-            System.out.println(String.format("return cached Student(%s, %s)", std.id, std.name));
+            log.info("return cached Student({}, {})", std.id, std.name);
         }
         return std;
     }

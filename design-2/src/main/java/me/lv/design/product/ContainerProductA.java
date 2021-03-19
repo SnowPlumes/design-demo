@@ -9,6 +9,6 @@ import lombok.extern.slf4j.Slf4j;
 public class ContainerProductA extends ContainerProduct {
     @Override
     public void show() {
-        log.info("ContainerProductA...");
+        log.info("容器产品 A...");
     }
 }

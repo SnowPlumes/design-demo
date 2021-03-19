@@ -10,6 +10,6 @@ public class MouldProductB extends MouldProduct{
 
     @Override
     public void show() {
-        log.info("MouldProductB...");
+        log.info("模具产品 B...");
     }
 }
