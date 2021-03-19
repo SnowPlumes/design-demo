@@ -11,6 +11,8 @@ public class AdapterTest {
     public void test() {
         Motor motor = new ElectricAdapter();
         motor.drive();
+        Motor motor1 = new OpticalAdapter();
+        motor1.drive();
     }
 
 }

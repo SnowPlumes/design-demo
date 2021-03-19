@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class ConcreteSubject implements Subject{
 
-    private List<Observer> list = new ArrayList<>();
+    private final List<Observer> list = new ArrayList<>();
 
     @Override
     public void attach(Observer observer) {
